@@ -112,9 +112,9 @@ def mesaj_oku_ve_coz():
 
         plaintext = hybrid_decrypt(
             payload=payload,
-            private_key_pem=priv_pem,
+            private_pem=priv_pem,      # DÜZELTİLDİ
             password=parola,
-            mac_hint=su_anki_mac,
+            local_mac=su_anki_mac,     # DÜZELTİLDİ
         )
 
         # Burn-on-read: dosyayı imha et
