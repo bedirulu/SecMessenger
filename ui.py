@@ -69,9 +69,9 @@ def sifrele_ve_kaydet():
             pub_pem = f.read()
 
         payload = hybrid_encrypt(
-            message=mesaj.encode("utf-8"),
-            public_key_pem=pub_pem,
-            mac_hint=hedef_mac,
+            plaintext=mesaj.encode("utf-8"),
+            public_pem=pub_pem,
+            target_mac=hedef_mac,
         )
 
         dosya_adi = f"giden_{mac_to_filename(hedef_mac)}.enc"
